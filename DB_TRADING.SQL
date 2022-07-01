@@ -61,7 +61,7 @@ CREATE TABLE COLLEGATO(
 CREATE TABLE MOVIMENTO(
     ID_ORDINE               CHAR(20)        PRIMARY KEY,
     QUANTITA                NUMBER(9,2)     NOT NULL,
-    DATA_M                  TIMESTAMP,                -- DA AGGIUNGERE NOT NULL
+    DATA_M                  DATE            NOT NULL, -- MODIFICARE UML E EE/R
     FEE                     NUMBER(9,2)     NOT NULL,
     TIPO_MOVIMENTO          NUMBER(1,0)     NOT NULL, -- PUO ESSERE SOLO 1 O 2
     ID_CONTO_VIRTUALE_M     VARCHAR(30)     NOT NULL, -- CHIAVE ESTERNA
