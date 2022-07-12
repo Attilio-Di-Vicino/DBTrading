@@ -66,7 +66,7 @@ BEGIN
         IF TIPO = 1 THEN
             SALDO := SALDO + (QUA_FEE - GAS);
         ELSE 
-            SALDO := SALDO - (QUA_FEE - GAS);
+            SALDO := SALDO - QUA_FEE;
         END IF;
 
     END IF;
