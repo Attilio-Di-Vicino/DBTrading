@@ -151,6 +151,71 @@ END PREMIO;
 /*
     6- ELIMINAZIONE REWARDS UNA VOLTA CHE SONO STATE RILASCIATE
 */
+CREATE OR REPLACE PROCEDURE ELIMINA_REWARDS_RILASCIATA
+IS
+    NOME_ VARCHAR(20);
+    COGNOME_ VARCHAR(20);
+BEGIN
+
+    FOR i IN (
+        SELECT DATA_RILASCIO,CODICE
+        FROM REWARDS
+    )
+    LOOP
+        IF i.DATA_RILASCIO <= SYSDATE THEN
+            DELETE FROM REWARDS WHERE CODICE = i.CODICE;
+
+            SELECT NOME,COGNOME
+            INTO NOME_,COGNOME_
+            FROM UTENTE 
+            WHERE CF = (
+                SELECT CF_UTENTE
+                FROM CARTA_DI_CREDITO
+                WHERE NUMERO_CARTA = (
+                    SELECT NUMERO_CARTA_C
+                    FROM COLLEGATO
+                    WHERE ID_CONTO_VIRTUALE_C IN (
+                        SELECT ID_CONTO_VIRTUALE
+                        FROM CONTO_VIRTUALE
+                        WHERE ID_CONTO_VIRTUALE = (
+                            SELECT ID_CONTO_VIRTUALE_R
+                            FROM REWARDS
+                            WHERE CODICE = i.CODICE
+                        )
+                    ) AND NOME_PIATTAFORMA_C IN (
+                        SELECT NOME_PIATTAFORMA_CV
+                        FROM CONTO_VIRTUALE
+                        WHERE NOME_PIATTAFORMA_CV = (
+                            SELECT NOME_PIATTAFORMA_R
+                            FROM REWARDS
+                            WHERE CODICE = i.CODICE
+                        )
+                    )
+                )
+            );
+
+            DBMS_OUTPUT.PUT_LINE('CIAO ' || NOME_ || ' ' || COGNOME_ || ' HAI RICEVUTO UN PREMIO!');
+        END IF;
+    END LOOP;
+END ELIMINA_REWARDS_RILASCIATA;
+-------------------------------------
+CREATE OR REPLACE PROCEDURE ELIMINA_REWARDS_RILASCIATA
+IS
+    NOME_ VARCHAR(20);
+    COGNOME_ VARCHAR(20);
+BEGIN
+
+    FOR i IN (
+        SELECT DATA_RILASCIO,CODICE
+        FROM REWARDS
+    )
+    LOOP
+        IF i.DATA_RILASCIO <= SYSDATE THEN
+            DELETE FROM REWARDS WHERE CODICE = i.CODICE;
+            DBMS_OUTPUT.PUT_LINE('REWARDS RILASCIATA E CANCELLATA: ' || i.CODICE);
+        END IF;
+    END LOOP;
+END ELIMINA_REWARDS_RILASCIATA;
 
 /*
     FUNCTION TOTALE DEPOSITI
