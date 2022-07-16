@@ -144,7 +144,7 @@ CREATE TABLE UNITO(
 
 CREATE TABLE SCAMBIO(
     TX_HASH             CHAR(66)        NOT NULL PRIMARY KEY,
-    PREZZO              NUMBER          NOT NULL,
+    PREZZO              NUMBER(18,4)    NOT NULL,
     FFE_S               NUMBER(4,2)     NOT NULL,
     CONTRATTO_S         CHAR(42)        NOT NULL,
     DATA_S              DATE            NOT NULL,
