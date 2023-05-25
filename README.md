@@ -8,7 +8,7 @@ Il repository include i seguenti elementi:
 
 ### 1. Documentazione
 
-La cartella "Documentazione" contiene la relazione del progetto che fornisce una spiegazione dettagliata di tutti gli aspetti del sistema gestionale. La relazione include:
+La relazione del progetto fornisce una spiegazione dettagliata di tutti gli aspetti del sistema gestionale. La relazione include:
 
 - Descrizione del contesto del progetto e dei requisiti funzionali e non funzionali.
 - Spiegazione dell'architettura del database e dei diagrammi ER (Entity-Relationship) che rappresentano la struttura dei dati.
@@ -19,7 +19,7 @@ La cartella "Documentazione" contiene la relazione del progetto che fornisce una
 
 ### 2. Diagrammi
 
-La cartella "Diagrammi" contiene una serie di diagrammi che aiutano a visualizzare e comprendere la struttura e le relazioni dei dati nel sistema gestionale. I diagrammi includono:
+Diagrammi che aiutano a visualizzare e comprendere la struttura e le relazioni dei dati nel sistema gestionale. I diagrammi includono:
 
 - Diagramma ER (Entity-Relationship) che rappresenta le entità, gli attributi e le relazioni tra di esse.
 - Diagrammi delle tabelle che mostrano la struttura e gli attributi di ciascuna tabella nel database.
@@ -32,7 +32,7 @@ Script PL/SQL per la creazione del database, la creazione delle tabelle, la defi
 
 ### 4. Contributori
 
-I contributori a questo progetto sono Mario-Vista. Grazie per il loro contributo a questo progetto.
+I contributori a questo progetto sono Mario-Vista.
 
 ## Utilizzo
 
@@ -51,12 +51,6 @@ git clone https://github.com/Attilio-Di-Vicino/DB_Trading.git
 4. Utilizza gli script PL/SQL nella cartella "Codice PLSQL" per implementare le funzionalità del sistema gestionale nel tuo ambiente di sviluppo PL/SQL.
 
 5. Esegui le query e le operazioni specificate nella documentazione per interagire con il sistema gestionale e testarne le funzionalità.
-
-## Contributi
-
-Attualmente, i contributi a questo progetto sono limitati ai contributori esistenti. Se desideri contribuire al progetto, cont
-
-atta il proprietario del repository per ulteriori informazioni.
 
 ## Note
 
