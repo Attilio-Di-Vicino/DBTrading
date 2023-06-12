@@ -1,4 +1,4 @@
-# DB_Trading
+# DBTrading
 
 Questo repository contiene un progetto a scopo didattico per il corso di Basi di Dati. Il progetto consiste in un sistema gestionale dedicato ai traders di criptovalute, che offre funzionalità per la gestione delle transazioni, il monitoraggio dei prezzi e l'analisi delle criptovalute.
 
